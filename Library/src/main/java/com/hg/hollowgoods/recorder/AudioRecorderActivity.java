@@ -1,6 +1,5 @@
 package com.hg.hollowgoods.recorder;
 
-import android.app.Activity;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.ColorDrawable;
@@ -8,6 +7,7 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,7 +18,6 @@ import android.widget.TextView;
 
 import com.cleveroad.audiovisualization.DbmHandler;
 import com.cleveroad.audiovisualization.GLAudioVisualizationView;
-import com.hg.hollowgoods.UI.Base.BaseActivity;
 import com.hg.hollowgoods.recorder.model.AudioChannel;
 import com.hg.hollowgoods.recorder.model.AudioSampleRate;
 import com.hg.hollowgoods.recorder.model.AudioSource;
@@ -32,7 +31,7 @@ import omrecorder.OmRecorder;
 import omrecorder.PullTransport;
 import omrecorder.Recorder;
 
-public class AudioRecorderActivity extends BaseActivity
+public class AudioRecorderActivity extends AppCompatActivity
         implements PullTransport.OnAudioChunkPulledListener, MediaPlayer.OnCompletionListener {
 
     private String filePath;
@@ -62,18 +61,9 @@ public class AudioRecorderActivity extends BaseActivity
     private ImageButton playView;
 
     @Override
-    public Activity addToExitGroup() {
-        return this;
-    }
-
-    @Override
-    public int bindLayout() {
-        return R.layout.aar_activity_audio_recorder;
-    }
-
-    @Nullable
-    @Override
-    public Object initView(View view, Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.aar_activity_audio_recorder);
 
         if (savedInstanceState != null) {
             filePath = savedInstanceState.getString(AndroidAudioRecorder.EXTRA_FILE_PATH);
@@ -145,13 +135,6 @@ public class AudioRecorderActivity extends BaseActivity
             recordView.setColorFilter(Color.BLACK);
             playView.setColorFilter(Color.BLACK);
         }
-
-        return null;
-    }
-
-    @Override
-    public void setListener() {
-
     }
 
     @Override

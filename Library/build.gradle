@@ -8,8 +8,8 @@ android {
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 27
-        versionCode 101
-        versionName "1.0.1"
+        versionCode 102
+        versionName "1.0.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         // Enabling MultiDex Support.
         multiDexEnabled true
@@ -42,7 +42,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-    implementation 'com.github.op123355569:HollowGoodsV3:3.1.4'
+    implementation 'com.android.support:appcompat-v7:27.+'
     implementation 'com.kailashdabhi:om-recorder:1.1.0'
     implementation 'com.cleveroad:audiovisualization:1.0.0'
 }
