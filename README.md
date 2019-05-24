@@ -3,6 +3,15 @@
 [![](https://jitpack.io/v/op123355569/HollowGoodsV3-Recorder.svg)](https://jitpack.io/#op123355569/HollowGoodsV3-Recorder)
 
 ```
+allprojects {
+	repositories {
+		...
+		maven { url 'https://jitpack.io' }
+	}
+}
+```
+
+```
 dependencies {
 	implementation 'com.github.op123355569:HollowGoodsV3:LastVersion'
 }
