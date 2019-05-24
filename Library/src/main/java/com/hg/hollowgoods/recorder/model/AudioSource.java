@@ -6,8 +6,8 @@ public enum AudioSource {
     MIC,
     CAMCORDER;
 
-    public int getSource(){
-        switch (this){
+    public int getSource() {
+        switch (this) {
             case CAMCORDER:
                 return MediaRecorder.AudioSource.CAMCORDER;
             default:
