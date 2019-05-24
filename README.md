@@ -13,7 +13,7 @@ allprojects {
 
 ```
 dependencies {
-	implementation 'com.github.op123355569:HollowGoodsV3:LastVersion'
+	implementation 'com.github.op123355569:HollowGoodsV3-Recorder:LastVersion'
 }
 ```
 
