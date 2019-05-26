@@ -18,6 +18,7 @@ dependencies {
 ```
 
 ```
+<!-- **** 录音模块 **** -->
 <uses-permission android:name="android.permission.RECORD_AUDIO" />
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 <uses-permission android:name="android.permission.WAKE_LOCK" />
