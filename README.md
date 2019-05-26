@@ -22,3 +22,21 @@ dependencies {
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 <uses-permission android:name="android.permission.WAKE_LOCK" />
 ```
+
+```
+AndroidAudioRecorder.with(this)
+	// Required
+	.setFilePath(AUDIO_FILE_PATH)
+	.setColor(ContextCompat.getColor(this, R.color.recorder_bg))
+	.setRequestCode(REQUEST_RECORD_AUDIO)
+
+	// Optional
+	.setSource(AudioSource.MIC)
+	.setChannel(AudioChannel.STEREO)
+	.setSampleRate(AudioSampleRate.HZ_48000)
+	.setAutoStart(false)
+	.setKeepDisplayOn(true)
+
+	// Start recording
+	.record();
+```
