@@ -41,3 +41,6 @@ AndroidAudioRecorder.with(this)
 	// Start recording
 	.record();
 ```
+
+## 声明
+本库是为了本人使用方便，整合的其他开发者的库，源：[AndroidAudioRecorder](https://github.com/adrielcafe/AndroidAudioRecorder)
