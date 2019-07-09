@@ -1,6 +1,7 @@
 package com.hg.hollowgoods.recorder;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Environment;
@@ -88,8 +89,9 @@ public class AndroidAudioRecorder {
         return this;
     }
 
-    public void record() {
-        Intent intent = new Intent(activity, AudioRecorderActivity.class);
+    public Intent getIntent(Context context) {
+
+        Intent intent = new Intent(context, AudioRecorderActivity.class);
         intent.putExtra(EXTRA_FILE_PATH, filePath);
         intent.putExtra(EXTRA_COLOR, color);
         intent.putExtra(EXTRA_SOURCE, source);
@@ -97,19 +99,16 @@ public class AndroidAudioRecorder {
         intent.putExtra(EXTRA_SAMPLE_RATE, sampleRate);
         intent.putExtra(EXTRA_AUTO_START, autoStart);
         intent.putExtra(EXTRA_KEEP_DISPLAY_ON, keepDisplayOn);
-        activity.startActivityForResult(intent, requestCode);
+
+        return intent;
+    }
+
+    public void record() {
+        activity.startActivityForResult(getIntent(activity), requestCode);
     }
 
     public void recordFromFragment() {
-        Intent intent = new Intent(fragment.getActivity(), AudioRecorderActivity.class);
-        intent.putExtra(EXTRA_FILE_PATH, filePath);
-        intent.putExtra(EXTRA_COLOR, color);
-        intent.putExtra(EXTRA_SOURCE, source);
-        intent.putExtra(EXTRA_CHANNEL, channel);
-        intent.putExtra(EXTRA_SAMPLE_RATE, sampleRate);
-        intent.putExtra(EXTRA_AUTO_START, autoStart);
-        intent.putExtra(EXTRA_KEEP_DISPLAY_ON, keepDisplayOn);
-        fragment.startActivityForResult(intent, requestCode);
+        fragment.startActivityForResult(getIntent(fragment.getActivity()), requestCode);
     }
 
 }
