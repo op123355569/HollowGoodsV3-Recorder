@@ -47,6 +47,4 @@ dependencies {
     }
     api 'com.kailashdabhi:om-recorder:1.1.0'
     api 'com.cleveroad:audiovisualization:1.0.0'
-
-    implementation 'com.google.android.exoplayer:exoplayer:2.10.1'
 }
